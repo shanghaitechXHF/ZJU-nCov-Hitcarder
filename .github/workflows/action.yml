@@ -1,0 +1,26 @@
+name: 'ZJU-nCov-Hitcarder Action'
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '6 0 * * *'
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - username: ZJU_USERNAME
+            password: ZJU_PASSWORD
+            dingtalk_token: DINGTALK_TOKEN
+            serverchan_key: SERVERCHAN_KEY
+    steps:
+      - name: Working
+        uses: shanghaitechXHF/zju-ncov-hitcarder@master
+        with:
+          username: ${{ secrets[matrix.username] }}
+          password: ${{ secrets[matrix.password] }}
+          dingtalk_token: ${{ secrets[matrix.dingtalk_token] }}
+          serverchan_key: ${{ secrets[matrix.serverchan_key] }}
