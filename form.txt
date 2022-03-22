@@ -196,7 +196,7 @@
                                 <input v-model="info.area" readonly type="text" placeholder="点击获取地理位置 Click to get geographic location"></div>
                         </li>
 
-                        <li v-show="ipCtrl && sfzgn == 1" name="ip">
+                        <li v-show="false && ipCtrl && sfzgn == 1" name="ip">
                             <div class="text">
                                 <div class="hcqbtn-wrap">
                                     <select class="hcqbtn hcqbtn-danger" v-model='jtszd.myprovice' @change="handleChangeCity()">
